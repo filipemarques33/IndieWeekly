@@ -1,0 +1,6 @@
+framework module Pods_IndieWeekly {
+  umbrella header "Pods-IndieWeekly-umbrella.h"
+
+  export *
+  module * { export * }
+}

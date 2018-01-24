@@ -7,23 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176792338F41B2DB700952F3 /* Pods_IndieWeekly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FAECD976B5FCF8B5AABB5C /* Pods_IndieWeekly.framework */; };
+		D40DB29C200F2F5B00E7B371 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DB29B200F2F5B00E7B371 /* WebViewController.swift */; };
+		D4423B7920179A0D0061F9BB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */; };
+		D44895042007E7AC00EB948E /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44895032007E7AC00EB948E /* MainUser.swift */; };
 		D4527162200692540085413B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4527161200692540085413B /* AppDelegate.swift */; };
-		D4527164200692540085413B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4527163200692540085413B /* ViewController.swift */; };
+		D4527164200692540085413B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4527163200692540085413B /* LoginViewController.swift */; };
 		D4527167200692540085413B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4527165200692540085413B /* Main.storyboard */; };
 		D452716A200692540085413B /* IndieWeekly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4527168200692540085413B /* IndieWeekly.xcdatamodeld */; };
 		D452716C200692540085413B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D452716B200692540085413B /* Assets.xcassets */; };
 		D452716F200692540085413B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D452716D200692540085413B /* LaunchScreen.storyboard */; };
+		D4527177200693000085413B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4527176200693000085413B /* GoogleService-Info.plist */; };
+		D4557DF720080D45007D9A51 /* LoginServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4557DF620080D45007D9A51 /* LoginServices.swift */; };
+		D4557DF9200815ED007D9A51 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4557DF8200815ED007D9A51 /* RegisterViewController.swift */; };
+		D476E79C20180F1A003181D1 /* EditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476E79B20180F1A003181D1 /* EditCommentTableViewCell.swift */; };
+		D4ABF2F82011B5C600C351DC /* GameInfoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ABF2F72011B5C600C351DC /* GameInfoExtension.swift */; };
+		D4ABF2FF201286D900C351DC /* CommunityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ABF2FE201286D900C351DC /* CommunityTableViewController.swift */; };
+		D4B7B6E32011788E001F7AA1 /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B7B6E22011788E001F7AA1 /* ActivityView.xib */; };
+		D4B7B6E5201179A4001F7AA1 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7B6E4201179A4001F7AA1 /* ActivityView.swift */; };
+		D4C318AB2006AF3400E9DF87 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C318AA2006AF3400E9DF87 /* DatabaseManager.swift */; };
+		D4C499E3200EC38100453529 /* GameInfoCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C499E2200EC38100453529 /* GameInfoCells.swift */; };
+		D4D68F9E2007DFE400146AE8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D68F9D2007DFE400146AE8 /* User.swift */; };
+		D4DE2F16200D057A002B37B1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE2F15200D057A002B37B1 /* Game.swift */; };
+		D4EDC3B2200D34CF0053EE5A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDC3B1200D34CF0053EE5A /* ProfileViewController.swift */; };
+		D4EDC3B4200D8D250053EE5A /* GamePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDC3B3200D8D250053EE5A /* GamePosterCollectionViewCell.swift */; };
+		D4EDC3B6200E6D1E0053EE5A /* GameInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDC3B5200E6D1E0053EE5A /* GameInfoViewController.swift */; };
+		D4EDC3B8200E790A0053EE5A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDC3B7200E790A0053EE5A /* LoadingViewController.swift */; };
+		D4EDC3BA200E7DD50053EE5A /* GameOfTheWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDC3B9200E7DD50053EE5A /* GameOfTheWeek.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F00942F0D4BDB2FAEF60035 /* Pods-IndieWeekly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndieWeekly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly.debug.xcconfig"; sourceTree = "<group>"; };
+		A705165FF8834F84A0F5442E /* Pods-IndieWeekly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndieWeekly.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly.release.xcconfig"; sourceTree = "<group>"; };
+		D40DB29B200F2F5B00E7B371 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D424DB712018F8CF0069BBA5 /* IndieWeekly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndieWeekly.entitlements; sourceTree = "<group>"; };
+		D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		D44895032007E7AC00EB948E /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
 		D452715E200692540085413B /* IndieWeekly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndieWeekly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4527161200692540085413B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4527163200692540085413B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4527163200692540085413B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D4527166200692540085413B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4527169200692540085413B /* IndieWeekly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IndieWeekly.xcdatamodel; sourceTree = "<group>"; };
 		D452716B200692540085413B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D452716E200692540085413B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4527170200692540085413B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4527176200693000085413B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4557DF620080D45007D9A51 /* LoginServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServices.swift; sourceTree = "<group>"; };
+		D4557DF8200815ED007D9A51 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D476E79B20180F1A003181D1 /* EditCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentTableViewCell.swift; sourceTree = "<group>"; };
+		D4ABF2F72011B5C600C351DC /* GameInfoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoExtension.swift; sourceTree = "<group>"; };
+		D4ABF2FE201286D900C351DC /* CommunityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTableViewController.swift; sourceTree = "<group>"; };
+		D4B7B6E22011788E001F7AA1 /* ActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
+		D4B7B6E4201179A4001F7AA1 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		D4C318AA2006AF3400E9DF87 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		D4C499E2200EC38100453529 /* GameInfoCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoCells.swift; sourceTree = "<group>"; };
+		D4D68F9D2007DFE400146AE8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D4DE2F15200D057A002B37B1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		D4EDC3B1200D34CF0053EE5A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D4EDC3B3200D8D250053EE5A /* GamePosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4EDC3B5200E6D1E0053EE5A /* GameInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoViewController.swift; sourceTree = "<group>"; };
+		D4EDC3B7200E790A0053EE5A /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		D4EDC3B9200E7DD50053EE5A /* GameOfTheWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfTheWeek.swift; sourceTree = "<group>"; };
+		F3FAECD976B5FCF8B5AABB5C /* Pods_IndieWeekly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndieWeekly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +76,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176792338F41B2DB700952F3 /* Pods_IndieWeekly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08B98EE7A8F88926995F0CFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F00942F0D4BDB2FAEF60035 /* Pods-IndieWeekly.debug.xcconfig */,
+				A705165FF8834F84A0F5442E /* Pods-IndieWeekly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A55725064720462509471D0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3FAECD976B5FCF8B5AABB5C /* Pods_IndieWeekly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D44895022007E72B00EB948E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4D68F9D2007DFE400146AE8 /* User.swift */,
+				D44895032007E7AC00EB948E /* MainUser.swift */,
+				D4DE2F15200D057A002B37B1 /* Game.swift */,
+				D4EDC3B9200E7DD50053EE5A /* GameOfTheWeek.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D4527155200692540085413B = {
 			isa = PBXGroup;
 			children = (
 				D4527160200692540085413B /* IndieWeekly */,
 				D452715F200692540085413B /* Products */,
+				08B98EE7A8F88926995F0CFD /* Pods */,
+				A55725064720462509471D0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +132,73 @@
 		D4527160200692540085413B /* IndieWeekly */ = {
 			isa = PBXGroup;
 			children = (
+				D424DB712018F8CF0069BBA5 /* IndieWeekly.entitlements */,
 				D4527161200692540085413B /* AppDelegate.swift */,
-				D4527163200692540085413B /* ViewController.swift */,
-				D4527165200692540085413B /* Main.storyboard */,
-				D452716B200692540085413B /* Assets.xcassets */,
-				D452716D200692540085413B /* LaunchScreen.storyboard */,
+				D44895022007E72B00EB948E /* Model */,
+				D4557DF32007EB67007D9A51 /* View */,
+				D4557DF52007EF8C007D9A51 /* Controller */,
+				D4C318A92006AEE000E9DF87 /* Database */,
+				D4557DF42007EB75007D9A51 /* Services */,
 				D4527170200692540085413B /* Info.plist */,
+				D4527176200693000085413B /* GoogleService-Info.plist */,
 				D4527168200692540085413B /* IndieWeekly.xcdatamodeld */,
 			);
 			path = IndieWeekly;
+			sourceTree = "<group>";
+		};
+		D4557DF32007EB67007D9A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4B7B6E72011AAD3001F7AA1 /* Activity View */,
+				D452716D200692540085413B /* LaunchScreen.storyboard */,
+				D4527165200692540085413B /* Main.storyboard */,
+				D452716B200692540085413B /* Assets.xcassets */,
+				D4EDC3B3200D8D250053EE5A /* GamePosterCollectionViewCell.swift */,
+				D4C499E2200EC38100453529 /* GameInfoCells.swift */,
+				D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */,
+				D476E79B20180F1A003181D1 /* EditCommentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4557DF42007EB75007D9A51 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4557DF620080D45007D9A51 /* LoginServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D4557DF52007EF8C007D9A51 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4EDC3B7200E790A0053EE5A /* LoadingViewController.swift */,
+				D4527163200692540085413B /* LoginViewController.swift */,
+				D4557DF8200815ED007D9A51 /* RegisterViewController.swift */,
+				D4EDC3B5200E6D1E0053EE5A /* GameInfoViewController.swift */,
+				D4ABF2F72011B5C600C351DC /* GameInfoExtension.swift */,
+				D4EDC3B1200D34CF0053EE5A /* ProfileViewController.swift */,
+				D40DB29B200F2F5B00E7B371 /* WebViewController.swift */,
+				D4ABF2FE201286D900C351DC /* CommunityTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D4B7B6E72011AAD3001F7AA1 /* Activity View */ = {
+			isa = PBXGroup;
+			children = (
+				D4B7B6E22011788E001F7AA1 /* ActivityView.xib */,
+				D4B7B6E4201179A4001F7AA1 /* ActivityView.swift */,
+			);
+			path = "Activity View";
+			sourceTree = "<group>";
+		};
+		D4C318A92006AEE000E9DF87 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D4C318AA2006AF3400E9DF87 /* DatabaseManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4527173200692540085413B /* Build configuration list for PBXNativeTarget "IndieWeekly" */;
 			buildPhases = (
+				BD539B8A23771001F0B6D7CA /* [CP] Check Pods Manifest.lock */,
 				D452715A200692540085413B /* Sources */,
 				D452715B200692540085413B /* Frameworks */,
 				D452715C200692540085413B /* Resources */,
+				3B99A9ACE25309E47C1B9712 /* [CP] Embed Pods Frameworks */,
+				2E6DB7917B69FE9A49124D5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -100,6 +237,11 @@
 					D452715D200692540085413B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -127,20 +269,122 @@
 			buildActionMask = 2147483647;
 			files = (
 				D452716F200692540085413B /* LaunchScreen.storyboard in Resources */,
+				D4527177200693000085413B /* GoogleService-Info.plist in Resources */,
 				D452716C200692540085413B /* Assets.xcassets in Resources */,
+				D4B7B6E32011788E001F7AA1 /* ActivityView.xib in Resources */,
 				D4527167200692540085413B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E6DB7917B69FE9A49124D5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B99A9ACE25309E47C1B9712 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD539B8A23771001F0B6D7CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndieWeekly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D452715A200692540085413B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C318AB2006AF3400E9DF87 /* DatabaseManager.swift in Sources */,
+				D40DB29C200F2F5B00E7B371 /* WebViewController.swift in Sources */,
+				D4DE2F16200D057A002B37B1 /* Game.swift in Sources */,
 				D452716A200692540085413B /* IndieWeekly.xcdatamodeld in Sources */,
-				D4527164200692540085413B /* ViewController.swift in Sources */,
+				D4423B7920179A0D0061F9BB /* CommentTableViewCell.swift in Sources */,
+				D4EDC3B4200D8D250053EE5A /* GamePosterCollectionViewCell.swift in Sources */,
+				D4ABF2FF201286D900C351DC /* CommunityTableViewController.swift in Sources */,
+				D4B7B6E5201179A4001F7AA1 /* ActivityView.swift in Sources */,
+				D476E79C20180F1A003181D1 /* EditCommentTableViewCell.swift in Sources */,
+				D4527164200692540085413B /* LoginViewController.swift in Sources */,
+				D4ABF2F82011B5C600C351DC /* GameInfoExtension.swift in Sources */,
+				D4557DF9200815ED007D9A51 /* RegisterViewController.swift in Sources */,
+				D4C499E3200EC38100453529 /* GameInfoCells.swift in Sources */,
+				D4EDC3B8200E790A0053EE5A /* LoadingViewController.swift in Sources */,
+				D4EDC3B2200D34CF0053EE5A /* ProfileViewController.swift in Sources */,
+				D44895042007E7AC00EB948E /* MainUser.swift in Sources */,
+				D4EDC3BA200E7DD50053EE5A /* GameOfTheWeek.swift in Sources */,
+				D4D68F9E2007DFE400146AE8 /* User.swift in Sources */,
+				D4557DF720080D45007D9A51 /* LoginServices.swift in Sources */,
+				D4EDC3B6200E6D1E0053EE5A /* GameInfoViewController.swift in Sources */,
 				D4527162200692540085413B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +520,10 @@
 		};
 		D4527174200692540085413B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F00942F0D4BDB2FAEF60035 /* Pods-IndieWeekly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IndieWeekly/IndieWeekly.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WW6YH2P93;
 				INFOPLIST_FILE = IndieWeekly/Info.plist;
@@ -291,8 +537,10 @@
 		};
 		D4527175200692540085413B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A705165FF8834F84A0F5442E /* Pods-IndieWeekly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IndieWeekly/IndieWeekly.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WW6YH2P93;
 				INFOPLIST_FILE = IndieWeekly/Info.plist;
