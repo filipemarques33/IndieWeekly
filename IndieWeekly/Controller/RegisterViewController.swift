@@ -10,10 +10,13 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    
+    weak var activityIndicator:ActivityView?
     
     var source:LoginViewController!
     
@@ -25,41 +28,41 @@ class RegisterViewController: UIViewController {
     @IBAction func registerBtnPressed (_ sender: UIButton) {
         let username = self.nameField.text!
         let email = self.emailField.text!
+        let password = self.passwordField.text!
+        let passwordConfirmation = self.confirmPasswordField.text!
         
-        if username != "" && email != "" && self.passwordField.text! != "" &&  self.confirmPasswordField.text! != "" {
-            if self.passwordField.text! == self.confirmPasswordField.text! {
-                LoginServices.handleUserRegistration(username: username, email: email, password: self.passwordField.text!) {
-                    (error) in
-                    if error != nil {
-                        if let errorDesc = error?.localizedDescription {
-                            print(errorDesc)
-                        }
-                    } else {
-                        self.showConfirmationAlert()
-                    }
+        self.setUpActivityIndicator()
+        LoginServices.handleUserRegistration(username: username, email: email, password: password, passwordConfirmation: passwordConfirmation) {
+            (error) in
+            self.stopActivityIndicator()
+            if error != nil {
+                if let errorDesc = error?.localizedDescription {
+                    self.errorLabel.text = errorDesc
                 }
-                
             } else {
-                print ("Password and Confirmation must be the same")
+                self.showConfirmationAlert()
             }
-
-            
-        } else {
-            print ("Fill all fields to proceed")
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.errorLabel.text = ""
+        
         nameField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Username", comment: "User's username"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        nameField.delegate = self
         
         emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         emailField.keyboardType = .emailAddress
+        emailField.delegate = self
         
         passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        passwordField.delegate = self
         
         confirmPasswordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Confirm Password", comment: "Password Confirmation"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        confirmPasswordField.delegate = self
         
         // Tap gesture to hide keyboard
         let tap = UITapGestureRecognizer(target:self, action: #selector(self.hideKeyboard))
@@ -95,5 +98,34 @@ class RegisterViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func setUpActivityIndicator() {
+        if let views = Bundle.main.loadNibNamed("ActivityView", owner: self, options: nil) as? [ActivityView], views.count > 0 {
+            
+            self.activityIndicator = views.first!
+            self.activityIndicator?.center = self.view.center
+            self.view.addSubview(activityIndicator!)
+            self.activityIndicator?.startIndicator()
+        }
+    }
+    
+    func stopActivityIndicator() {
+        self.activityIndicator?.stopIndicator()
+    }
 
+}
+
+extension RegisterViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameField {
+            emailField.becomeFirstResponder()
+        } else if textField == emailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            confirmPasswordField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }

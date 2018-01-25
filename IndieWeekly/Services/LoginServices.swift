@@ -10,6 +10,52 @@ import FirebaseAuth
 
 class LoginServices {
     
+    static func handleUserRegistration(username: String, email:String, password:String, passwordConfirmation:String, completionHandler: @escaping (Error?) -> Void) {
+        
+        if username == "" || email == "" || password == "" || passwordConfirmation == "" {
+            let error:Error = LoginServicesError.fieldFilling
+            completionHandler(error)
+            return
+        }
+        
+        if password != passwordConfirmation {
+            let error:Error = LoginServicesError.confirmationDifferent
+            completionHandler(error)
+            return
+        }
+        
+        DatabaseManager.fetchUser(byUsername: username) {
+            (userFetched) in
+            if userFetched == nil {
+                Auth.auth().createUser(withEmail: email, password: password) {
+                    (user, error) in
+                    if user != nil {
+                        let newUser = MainUser(username: username, email: email)
+                        DatabaseManager.add(user: newUser){
+                            (dbError) in
+                            if dbError != nil {
+                                completionHandler(dbError)
+                                return
+                            } else {
+                                MainUser.shared = newUser
+                                print("Added to DB")
+                                completionHandler(nil)
+                            }
+                        }
+                        return
+                    } else {
+                        completionHandler(error)
+                        return
+                    }
+                }
+            } else {
+                let error:Error = LoginServicesError.usernameTaken
+                completionHandler(error)
+                return
+            }
+        }
+    }
+    
     static func handleUserRegistration(username: String, email:String, password:String, completionHandler: @escaping (Error?) -> Void) {
         DatabaseManager.fetchUser(byUsername: username){
             (userFetched) in

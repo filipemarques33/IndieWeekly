@@ -12,38 +12,26 @@ import UIKit
 class DatabaseManager {
     
     static var ref:DatabaseReference = Database.database().reference()
-
+    
     static func add(user: MainUser, completionHandler: @escaping(Error?) -> Void) {
-        fetchUser(byUsername: user.username){
-            (userFetched) in
+        let userRef = ref.child("users").child(user.username)
+    
+        let userDict: [String : AnyObject] = [
+            "username": user.username as AnyObject,
+            "email": user.email as AnyObject,
+            "profilePictureURL": "" as AnyObject,
+            "gameList": "" as AnyObject,
+            "gamesRated": "" as AnyObject
+        ]
+    
+        userRef.setValue(userDict) {
+            (error, _) in
             
-            if (userFetched != nil) {
-                print("User already on DB")
+            guard (error == nil) else {
+                completionHandler(error)
                 return
-            } else {
-                
-                let userRef = ref.child("users").child(user.username)
-                
-                let userDict: [String : AnyObject] = [
-                    "username": user.username as AnyObject,
-                    "email": user.email as AnyObject,
-                    "profilePictureURL": "" as AnyObject,
-                    "gameList": "" as AnyObject,
-                    "gamesRated": "" as AnyObject
-                ]
-                
-                userRef.setValue(userDict) {
-                    (error, _) in
-                    
-                    guard (error == nil) else {
-                        completionHandler(error)
-                        return
-                    }
-                    
-                    completionHandler(nil)
-                }
-                
             }
+            completionHandler(nil)
         }
     }
     

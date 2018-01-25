@@ -18,5 +18,6 @@ target 'IndieWeekly' do
 	pod 'FacebookShare'
 
 	pod 'Nuke', '~> 5.0'
+    pod 'IQKeyboardManagerSwift'
 
 end

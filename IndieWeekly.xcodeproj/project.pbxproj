@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		176792338F41B2DB700952F3 /* Pods_IndieWeekly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FAECD976B5FCF8B5AABB5C /* Pods_IndieWeekly.framework */; };
 		D40DB29C200F2F5B00E7B371 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DB29B200F2F5B00E7B371 /* WebViewController.swift */; };
+		D42EABA720197317002FCFB7 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EABA620197317002FCFB7 /* AboutViewController.swift */; };
+		D42EABA92019990A002FCFB7 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EABA82019990A002FCFB7 /* AppErrors.swift */; };
 		D4423B7920179A0D0061F9BB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */; };
 		D44895042007E7AC00EB948E /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44895032007E7AC00EB948E /* MainUser.swift */; };
 		D4527162200692540085413B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4527161200692540085413B /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 		A705165FF8834F84A0F5442E /* Pods-IndieWeekly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndieWeekly.release.xcconfig"; path = "Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly.release.xcconfig"; sourceTree = "<group>"; };
 		D40DB29B200F2F5B00E7B371 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D424DB712018F8CF0069BBA5 /* IndieWeekly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndieWeekly.entitlements; sourceTree = "<group>"; };
+		D42EABA620197317002FCFB7 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D42EABA82019990A002FCFB7 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
 		D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		D44895032007E7AC00EB948E /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
 		D452715E200692540085413B /* IndieWeekly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndieWeekly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,7 @@
 				D44895032007E7AC00EB948E /* MainUser.swift */,
 				D4DE2F15200D057A002B37B1 /* Game.swift */,
 				D4EDC3B9200E7DD50053EE5A /* GameOfTheWeek.swift */,
+				D42EABA82019990A002FCFB7 /* AppErrors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				D4EDC3B1200D34CF0053EE5A /* ProfileViewController.swift */,
 				D40DB29B200F2F5B00E7B371 /* WebViewController.swift */,
 				D4ABF2FE201286D900C351DC /* CommunityTableViewController.swift */,
+				D42EABA620197317002FCFB7 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,8 +292,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -314,6 +320,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -330,6 +337,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -367,10 +375,12 @@
 			files = (
 				D4C318AB2006AF3400E9DF87 /* DatabaseManager.swift in Sources */,
 				D40DB29C200F2F5B00E7B371 /* WebViewController.swift in Sources */,
+				D42EABA720197317002FCFB7 /* AboutViewController.swift in Sources */,
 				D4DE2F16200D057A002B37B1 /* Game.swift in Sources */,
 				D452716A200692540085413B /* IndieWeekly.xcdatamodeld in Sources */,
 				D4423B7920179A0D0061F9BB /* CommentTableViewCell.swift in Sources */,
 				D4EDC3B4200D8D250053EE5A /* GamePosterCollectionViewCell.swift in Sources */,
+				D42EABA92019990A002FCFB7 /* AppErrors.swift in Sources */,
 				D4ABF2FF201286D900C351DC /* CommunityTableViewController.swift in Sources */,
 				D4B7B6E5201179A4001F7AA1 /* ActivityView.swift in Sources */,
 				D476E79C20180F1A003181D1 /* EditCommentTableViewCell.swift in Sources */,

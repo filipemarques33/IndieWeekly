@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "IndieWeekly/Controller/ProfileViewController.swift"
-            timestampString = "538431975.062029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "showUserOptionsSheet()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "IndieWeekly/Controller/CommunityTableViewController.swift"
             timestampString = "538460227.762558"
             startingColumnNumber = "9223372036854775807"
@@ -58,7 +42,7 @@
                   moduleName = "IndieWeekly"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/filipe/Desktop/IndieWeekly/IndieWeekly/Controller/CommunityTableViewController.swift"
-                  timestampString = "538457659.9558769"
+                  timestampString = "538556801.937272"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
@@ -73,14 +57,30 @@
                   moduleName = "IndieWeekly"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/filipe/Desktop/IndieWeekly/IndieWeekly/Controller/CommunityTableViewController.swift"
-                  timestampString = "538457659.958079"
+                  timestampString = "538556801.939263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "3652">
+                  offsetFromSymbolStart = "3700">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IndieWeekly/Controller/LoginViewController.swift"
+            timestampString = "538556801.902693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

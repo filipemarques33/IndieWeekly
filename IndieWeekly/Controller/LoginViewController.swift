@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var backBtn: UIButton!
@@ -26,13 +27,13 @@ class LoginViewController: UIViewController {
         
         self.setUpActivityIndicator()
         LoginServices.handleUserLoggedIn(email: email, password: password) { (success, error) in
+            self.stopActivityIndicator()
             if success {
                 self.segueToApp()
             } else {
-                self.stopActivityIndicator()
                 if error != nil {
-                    if let errorDesc = error?.localizedDescription{
-                        print(errorDesc)
+                    if let errorDesc = error?.localizedDescription {
+                        self.errorLabel.text = errorDesc
                     }
                 }
             }
@@ -51,13 +52,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.errorLabel.text = ""
+        
         // Editing email textfield
         emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        emailField.delegate = self
         emailField.keyboardType = .emailAddress
         
-        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         
-        // Tap gesture to hide keyboard
+        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        passwordField.delegate = self
+        
+        
+        
         let tap = UITapGestureRecognizer(target:self, action: #selector(self.hideKeyboard))
         self.view.addGestureRecognizer(tap)
         
@@ -126,6 +133,19 @@ class LoginViewController: UIViewController {
     
     func stopActivityIndicator() {
         self.activityIndicator?.stopIndicator()
+    }
+
+}
+
+extension LoginViewController:UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            textField.resignFirstResponder()
+        }
+        return false
     }
 
 }

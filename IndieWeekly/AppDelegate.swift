@@ -12,6 +12,7 @@ import Firebase
 import FirebaseMessaging
 import FirebaseInstanceID
 import UserNotifications
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         FirebaseApp.configure()
         application.registerForRemoteNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshToken(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
