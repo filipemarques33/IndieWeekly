@@ -11,6 +11,7 @@
 		D40DB29C200F2F5B00E7B371 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DB29B200F2F5B00E7B371 /* WebViewController.swift */; };
 		D42EABA720197317002FCFB7 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EABA620197317002FCFB7 /* AboutViewController.swift */; };
 		D42EABA92019990A002FCFB7 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EABA82019990A002FCFB7 /* AppErrors.swift */; };
+		D42EABAB201B91D4002FCFB7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42EABAA201B91D4002FCFB7 /* StorageManager.swift */; };
 		D4423B7920179A0D0061F9BB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */; };
 		D44895042007E7AC00EB948E /* MainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44895032007E7AC00EB948E /* MainUser.swift */; };
 		D4527162200692540085413B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4527161200692540085413B /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		D424DB712018F8CF0069BBA5 /* IndieWeekly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IndieWeekly.entitlements; sourceTree = "<group>"; };
 		D42EABA620197317002FCFB7 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D42EABA82019990A002FCFB7 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		D42EABAA201B91D4002FCFB7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		D4423B7820179A0D0061F9BB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		D44895032007E7AC00EB948E /* MainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUser.swift; sourceTree = "<group>"; };
 		D452715E200692540085413B /* IndieWeekly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndieWeekly.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +144,7 @@
 				D44895022007E72B00EB948E /* Model */,
 				D4557DF32007EB67007D9A51 /* View */,
 				D4557DF52007EF8C007D9A51 /* Controller */,
-				D4C318A92006AEE000E9DF87 /* Database */,
+				D4C318A92006AEE000E9DF87 /* Managers */,
 				D4557DF42007EB75007D9A51 /* Services */,
 				D4527170200692540085413B /* Info.plist */,
 				D4527176200693000085413B /* GoogleService-Info.plist */,
@@ -199,12 +201,13 @@
 			path = "Activity View";
 			sourceTree = "<group>";
 		};
-		D4C318A92006AEE000E9DF87 /* Database */ = {
+		D4C318A92006AEE000E9DF87 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				D4C318AA2006AF3400E9DF87 /* DatabaseManager.swift */,
+				D42EABAA201B91D4002FCFB7 /* StorageManager.swift */,
 			);
-			path = Database;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,8 +295,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IndieWeekly/Pods-IndieWeekly-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -388,6 +391,7 @@
 				D4ABF2F82011B5C600C351DC /* GameInfoExtension.swift in Sources */,
 				D4557DF9200815ED007D9A51 /* RegisterViewController.swift in Sources */,
 				D4C499E3200EC38100453529 /* GameInfoCells.swift in Sources */,
+				D42EABAB201B91D4002FCFB7 /* StorageManager.swift in Sources */,
 				D4EDC3B8200E790A0053EE5A /* LoadingViewController.swift in Sources */,
 				D4EDC3B2200D34CF0053EE5A /* ProfileViewController.swift in Sources */,
 				D44895042007E7AC00EB948E /* MainUser.swift in Sources */,

@@ -15,11 +15,11 @@ class User {
     var email:String
     var profilePictureURL:URL?
     
-    init(username: String, email: String){
+    init(username: String, email: String, profilePictureURL:URL? = nil){
         //self.id = id
         self.username = username
         self.email = email
-        self.profilePictureURL = nil
+        self.profilePictureURL = profilePictureURL
     }
     
 }

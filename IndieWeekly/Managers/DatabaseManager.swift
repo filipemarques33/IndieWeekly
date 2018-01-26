@@ -59,7 +59,7 @@ class DatabaseManager {
                 return
             }
             
-            let mainUser = MainUser(username: user.username, email: user.email)
+            let mainUser = MainUser(username: user.username, email: user.email, profilePictureURL: user.profilePictureURL)
             
             fetchMainUserDetailedInfo(user: mainUser, userDictionary: userDictionary) {
                 (success) in
@@ -115,7 +115,15 @@ class DatabaseManager {
             return nil
         }
         
-        let user = User(username: userUsername, email: userEmail)
+        var userProfilePictureURL:URL?
+        if let imageURL = userDictionary["profilePictureURL"] as? String {
+            userProfilePictureURL = URL(string: imageURL)!
+        } else {
+            print("Fetching game's poster from DB returns nil.")
+            userProfilePictureURL = nil
+        }
+        
+        let user = User(username: userUsername, email: userEmail, profilePictureURL:userProfilePictureURL)
         print("User (\(user.username)) fetched successfully.")
 
         return user
@@ -156,7 +164,7 @@ class DatabaseManager {
                     return
                 }
                 
-                let mainUser = MainUser(username: user.username, email: user.email)
+                let mainUser = MainUser(username: user.username, email: user.email, profilePictureURL: user.profilePictureURL)
                 
                 fetchMainUserDetailedInfo(user: mainUser, userDictionary: userDictionary) {
                     (success) in
@@ -404,7 +412,7 @@ class DatabaseManager {
     
     static func add(gameID: String, toList list: String, completionHandler: @escaping(Error?) -> Void) {
         let usersRef = ref.child("users")
-    usersRef.child(MainUser.shared!.username).child("gameList").child(gameID).setValue(list) { (error, _) in
+        usersRef.child(MainUser.shared!.username).child("gameList").child(gameID).setValue(list) { (error, _) in
             guard (error == nil) else {
                 completionHandler(error)
                 return
@@ -443,7 +451,17 @@ class DatabaseManager {
             }
             completionHandler(nil)
         }
-        
+    }
+    
+    static func update(profilePictureURL:String, forUser user:User, completionHandler: @escaping(Error?)->Void){
+        let picUrlRef = ref.child("users").child(user.username).child("profilePictureURL")
+        picUrlRef.setValue(profilePictureURL) { (error, _) in
+            if error != nil {
+                completionHandler(error)
+                return
+            }
+            completionHandler(nil)
+        }
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 import Nuke
 import FirebaseAuth
 
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userProfilePicture: UIImageView!
@@ -18,7 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var gamesToShow: UISegmentedControl!
     
     @IBAction func userOptionsBtnPressed(_ sender: UIButton) {
-        if let user = MainUser.shared {
+        if MainUser.shared != nil {
             self.showUserOptionsSheet()
         } else {
             performSegue(withIdentifier: "segueToLogin", sender: self)
@@ -102,8 +103,11 @@ class ProfileViewController: UIViewController {
         let optionsSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // TODO: Profile Edit Option handler
-        let profOption = UIAlertAction(title: NSLocalizedString("Edit Profile Info", comment: ""), style: .default, handler: nil)
-        optionsSheet.addAction(profOption)
+        let profPictureOption = UIAlertAction(title: NSLocalizedString("Change Profile Picture", comment: ""), style: .default, handler: {
+            (action) in
+            self.presentImagePicker()
+        })
+        optionsSheet.addAction(profPictureOption)
         
         // Log Out Option
         let logOutOption = UIAlertAction(title:NSLocalizedString("Log Out", comment: ""), style: .destructive, handler: {
@@ -125,8 +129,7 @@ class ProfileViewController: UIViewController {
         if let user = MainUser.shared {
             self.userName.text = user.username
             self.userEmail.text = user.email
-            //Manager.shared.loadImage(with: user.profilePictureURL, into: self.userProfilePicture)
-            self.userProfilePicture.image = UIImage(named:"PlaceholderProfilePicture")
+            updateProfilePictureView()
         } else {
             self.userName.text = "Click here to Login"
             self.userEmail.text = "Please login to access your games"
@@ -134,6 +137,26 @@ class ProfileViewController: UIViewController {
         }
         self.loadGames()
         self.gamesCollectionView.reloadData()
+    }
+    
+    func updateProfilePictureView() {
+        self.userProfilePicture.image = UIImage(named:"PlaceholderProfilePicture")
+        if let user = MainUser.shared, let picURL = user.profilePictureURL {
+            Manager.shared.loadImage(with: picURL, into: self.userProfilePicture)
+        }
+    }
+    
+    func presentImagePicker(){
+        
+        
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        //picker.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
+        
+        self.present(picker, animated: true, completion: nil)
     }
 }
 
@@ -188,3 +211,64 @@ extension UIView {
     }
     
 }
+
+extension ProfileViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker:UIImage?
+        
+        let indicator = UIActivityIndicatorView()
+        indicator.activityIndicatorViewStyle = .whiteLarge
+        indicator.hidesWhenStopped = true
+        picker.view.addSubview(indicator)
+        indicator.center = self.view.center
+        indicator.startAnimating()
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let picture = selectedImageFromPicker, let user = MainUser.shared {
+            
+            let resizedPicture = picture.resizedImage(newSize: CGSize(width: 250, height: 250))
+            
+            print(resizedPicture.size)
+            
+            StorageManager.upload(profilePic: resizedPicture, forUser: user) {
+                (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "")
+                }
+                indicator.stopAnimating()
+                self.dismiss(animated: true, completion: {
+                    self.updateProfilePictureView()
+                })
+            }
+        }
+    }
+}
+
+
+extension UIImage {
+    
+    /// Returns a image that fills in newSize
+    func resizedImage(newSize: CGSize) -> UIImage {
+        // Guard newSize is different
+        guard self.size != newSize else { return self }
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
+}
+

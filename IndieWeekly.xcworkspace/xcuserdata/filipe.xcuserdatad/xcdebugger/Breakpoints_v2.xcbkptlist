@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IndieWeekly/Controller/CommunityTableViewController.swift"
-            timestampString = "538460227.762558"
+            timestampString = "538691591.140815"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "postComment(_:)"
             landmarkType = "7">
             <Locations>
@@ -42,11 +42,11 @@
                   moduleName = "IndieWeekly"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/filipe/Desktop/IndieWeekly/IndieWeekly/Controller/CommunityTableViewController.swift"
-                  timestampString = "538556801.937272"
+                  timestampString = "538688472.565312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "1544">
                </Location>
                <Location
@@ -57,11 +57,11 @@
                   moduleName = "IndieWeekly"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/filipe/Desktop/IndieWeekly/IndieWeekly/Controller/CommunityTableViewController.swift"
-                  timestampString = "538556801.939263"
+                  timestampString = "538688472.567772"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
                   offsetFromSymbolStart = "3700">
                </Location>
             </Locations>
@@ -74,12 +74,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IndieWeekly/Controller/LoginViewController.swift"
-            timestampString = "538556801.902693"
+            timestampString = "538691591.140947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
             landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IndieWeekly/Controller/ProfileViewController.swift"
+            timestampString = "538691591.141083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IndieWeekly/Controller/ProfileViewController.swift"
+            timestampString = "538691591.141207"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

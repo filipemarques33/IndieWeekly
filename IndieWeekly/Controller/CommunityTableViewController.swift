@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol PostCommentDataSource: NSObjectProtocol {
     func getCommentView()->UITextView?
@@ -111,8 +112,12 @@ class CommunityTableViewController: UITableViewController {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! EditCommentTableViewCell
             
-            cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
+            cell.profilePicture.image = UIImage(named:"PlaceholderProfilePicture")
+            if let user = MainUser.shared, let imageURL = user.profilePictureURL {
+                Manager.shared.loadImage(with: imageURL, into: cell.profilePicture)
+            }
             
+            cell.profilePicture.layer.cornerRadius = cell.profilePicture.frame.height/2
             cell.commentContent.delegate = self
             cell.commentContent.textColor = .lightGray
             cell.commentContent.centerVertically()
@@ -126,6 +131,11 @@ class CommunityTableViewController: UITableViewController {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
             cell.creatorName.text = comments[(indexPath.section)-1].creator.username
+            
+            cell.profilePicture.image = UIImage(named:"PlaceholderProfilePicture")
+            if let imageURL = comments[(indexPath.section)-1].creator.profilePictureURL {
+                Manager.shared.loadImage(with: imageURL, into: cell.profilePicture)
+            }
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd MMM yyyy, HH:mm"
