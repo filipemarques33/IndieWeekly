@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="46r-ky-DC2">
-                                <rect key="frame" x="109.5" y="244" width="155" height="178"/>
+                                <rect key="frame" x="109.5" y="224.5" width="155" height="178"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="46r-ky-DC2" secondAttribute="height" multiplier="155:178" id="3ui-UC-9ry"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                             <constraint firstAttribute="bottom" secondItem="dmb-AG-DEx" secondAttribute="bottom" id="YFH-EW-Hmz"/>
                             <constraint firstItem="dmb-AG-DEx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aXw-3P-JbX"/>
                             <constraint firstItem="46r-ky-DC2" firstAttribute="width" secondItem="dmb-AG-DEx" secondAttribute="width" multiplier="155:375" id="pZJ-Dx-zCH"/>
-                            <constraint firstItem="46r-ky-DC2" firstAttribute="centerY" secondItem="dmb-AG-DEx" secondAttribute="centerY" id="vpi-Pp-g0m"/>
+                            <constraint firstItem="46r-ky-DC2" firstAttribute="centerY" secondItem="dmb-AG-DEx" secondAttribute="centerY" multiplier="0.94" id="vpi-Pp-g0m"/>
                             <constraint firstItem="46r-ky-DC2" firstAttribute="centerX" secondItem="dmb-AG-DEx" secondAttribute="centerX" id="wZm-f7-QzD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

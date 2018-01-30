@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -24,6 +25,27 @@ class RegisterViewController: UIViewController {
         source.registered = false
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func PrivacyPolicyTap(_ sender: UITapGestureRecognizer) {
+        let ppURL = URL(string: "https://drive.google.com/file/d/1r4lt2rMjsYaX_F4N30RcyEsSL10XBq8r/view")
+        
+        let webVC = WebViewController(url: ppURL!)
+        webVC.delegate = self
+        webVC.dismissButtonStyle = .close
+        
+        self.present(webVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func TermsAndConditionsTap(_ sender: UITapGestureRecognizer) {
+        let tcURL = URL(string: "https://drive.google.com/file/d/1tle0gb9R7JoX7I3odsakXjvGInnAoVZ3/view")
+        
+        let webVC = WebViewController(url: tcURL!)
+        webVC.delegate = self
+        webVC.dismissButtonStyle = .close
+        
+        self.present(webVC, animated: true, completion: nil)
+    }
+    
     
     @IBAction func registerBtnPressed (_ sender: UIButton) {
         let username = self.nameField.text!
