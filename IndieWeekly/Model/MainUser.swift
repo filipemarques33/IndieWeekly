@@ -13,6 +13,7 @@ class MainUser: User {
     static var shared:MainUser? = nil
     
     // TODO: Add gameID type to String
+    var blacklistedUsers = [String]()
     var library = [Game]()
     var wishlist = [Game]()
     var gamesLiked = [String]()

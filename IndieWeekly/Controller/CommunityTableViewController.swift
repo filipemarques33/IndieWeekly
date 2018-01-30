@@ -25,8 +25,8 @@ class CommunityTableViewController: UITableViewController {
         if let mainUser = MainUser.shared {
             let commentView = postDataSource?.getCommentView()
             if commentView?.textColor != .lightGray && commentView?.text != "" && commentView?.text != nil {
-                let newComment = Comment(creator: mainUser, dateCreated: Date(), content: (commentView?.text)!)
-                DatabaseManager.add(comment: newComment, toGame: selectedGame, completionHandler: { (error) in
+                DatabaseManager.addComment(fromUser: mainUser, content: (commentView?.text)!, toGame: selectedGame, completionHandler: { (error, comment) in
+                    
                     guard (error == nil) else {
                         print("Error adding comment to DB")
                         return
@@ -39,7 +39,6 @@ class CommunityTableViewController: UITableViewController {
                     }
                     
                     self.getComments(completionBlock: nil)
-                    
                 })
             }
             
@@ -130,6 +129,9 @@ class CommunityTableViewController: UITableViewController {
         } else {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
+            
+            cell.comment = comments[(indexPath.section)-1]
+            
             cell.creatorName.text = comments[(indexPath.section)-1].creator.username
             
             cell.profilePicture.image = UIImage(named:"PlaceholderProfilePicture")
@@ -146,7 +148,9 @@ class CommunityTableViewController: UITableViewController {
             cell.commentContent.text = comments[(indexPath.section)-1].content
             cell.commentContent.setLineHeight(lineHeight: 1.25)
             
-            cell.isUserInteractionEnabled = false
+            cell.delegate = self
+            
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -174,6 +178,54 @@ class CommunityTableViewController: UITableViewController {
         self.getComments() {
             refreshControl.endRefreshing()
         }
+    }
+    
+    func report(comment:Comment, blacklisted:Bool){
+        DatabaseManager.report(comment: comment, onGame: selectedGame, blacklisted: blacklisted) { (error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "Error")
+            }
+            self.getComments()
+        }
+    }
+}
+
+extension CommunityTableViewController:CommentCellDelegate {
+    
+    func moreButtonPressed(onCell cell: CommentTableViewCell) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let reportAction = UIAlertAction(title: NSLocalizedString("Report", comment: ""), style: .default) { (action) in
+            let alertPrompt = UIAlertController(title: NSLocalizedString("Report Message", comment: ""), message: NSLocalizedString("Do you want stop getting posts this user as well?", comment: ""), preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            alertPrompt.addAction(cancelAction)
+            
+            let yesAction = UIAlertAction(title: NSLocalizedString("Yes", comment: ""), style: .default, handler: {
+                (action) in
+                
+                self.report(comment: cell.comment, blacklisted: true)
+            })
+            
+            alertPrompt.addAction(yesAction)
+            
+            let noAction = UIAlertAction(title: NSLocalizedString("No", comment: ""), style: .default, handler: {
+                (action) in
+                
+                self.report(comment: cell.comment, blacklisted: false)
+                
+            })
+            alertPrompt.addAction(noAction)
+            
+            self.present(alertPrompt, animated: true, completion: nil)
+            
+        }
+        actionSheet.addAction(reportAction)
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        actionSheet.addAction(cancelAction)
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
 
 }

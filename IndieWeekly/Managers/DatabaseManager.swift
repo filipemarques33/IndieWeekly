@@ -117,7 +117,7 @@ class DatabaseManager {
         
         var userProfilePictureURL:URL?
         if let imageURL = userDictionary["profilePictureURL"] as? String {
-            userProfilePictureURL = URL(string: imageURL)!
+            userProfilePictureURL = URL(string: imageURL)
         } else {
             print("Fetching game's poster from DB returns nil.")
             userProfilePictureURL = nil
@@ -189,6 +189,15 @@ class DatabaseManager {
         
         var userLibrary: [Game] = []
         var userWishlist: [Game] = []
+        var blacklist = [String]()
+        
+        if let blacklistDict = userDictionary["blacklist"] as? [String:AnyObject] {
+            for username in blacklistDict {
+                blacklist.append(username.key)
+            }
+        } else {
+            print("Fetching game's blacklist from DB returns nil.")
+        }
         
         let dispatchGroup = DispatchGroup()
         
@@ -216,6 +225,8 @@ class DatabaseManager {
         }
         
         dispatchGroup.notify(queue: DispatchQueue.main) {
+            
+            user.blacklistedUsers = blacklist
             user.library = userLibrary
             user.wishlist = userWishlist
             completionHandler(true)
@@ -351,8 +362,9 @@ class DatabaseManager {
                 
             }
         } else {
-            print("Fetching game's editorsCritic from DB returns nil.")
+            print("Fetching game's stores from DB returns nil.")
         }
+
         
         let game = Game(id: gameID, name: gameName, developer: gameDev, devWebsite: gameDevWebsite, posterURL: gamePosterURL, screenshotURL: gameScreenshotURL, genre: gameGenre, platforms: gamePlatforms, releaseDate: gameReleaseDate, synopsis: gameSynopsis, editorsCritic: gameEditorsCritic, stores: gameStores)
         print("Game (\(game.id)) fetched successfully.")
@@ -384,22 +396,26 @@ class DatabaseManager {
                 
                 let commentCreator = commDict["username"] as! String
                 
-                dispatchGroup.enter()
-                fetchUser(byUsername: commentCreator, completionHandler: {
-                    (user) in
-                    
-                    var commentDate:Date
-                    let date = commDict["date"] as! String
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
-                    commentDate = dateFormatter.date(from: date)!
-                    
-                    let commentContent = commDict["content"] as! String
-                    
-                    let newComment = Comment(creator: user!, dateCreated: commentDate, content: commentContent)
-                    gameComments.append(newComment)
-                    dispatchGroup.leave()
-                })
+                let blacklist = MainUser.shared?.blacklistedUsers ?? [String]()
+                
+                if !blacklist.contains(commentCreator) {
+                    dispatchGroup.enter()
+                    fetchUser(byUsername: commentCreator, completionHandler: {
+                        (user) in
+                        
+                        var commentDate:Date
+                        let date = commDict["date"] as! String
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
+                        commentDate = dateFormatter.date(from: date)!
+                        
+                        let commentContent = commDict["content"] as! String
+                        
+                        let newComment = Comment(id: comment.key, creator: user!, dateCreated: commentDate, content: commentContent)
+                        gameComments.append(newComment)
+                        dispatchGroup.leave()
+                    })
+                }
             }
             
             dispatchGroup.notify(queue: DispatchQueue.main, execute: {
@@ -432,24 +448,30 @@ class DatabaseManager {
         }
     }
     
-    static func add(comment:Comment, toGame game:Game, completionHandler: @escaping(Error?)->Void) {
+    static func addComment(fromUser user: User, content:String, toGame game:Game, completionHandler: @escaping(Error?, Comment?)->Void) {
         
+        let dateCreated = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
         
-        let commentDict: [String : Any] = [
-            "content": comment.content,
-            "username": comment.creator.username,
-            "date": dateFormatter.string(from: comment.dateCreated),
-        ]
+        let commentsRef = ref.child("games").child(game.id).child("comments").childByAutoId()
         
-        let commentsRef = ref.child("games").child(game.id).child("comments")
-        commentsRef.childByAutoId().setValue(commentDict) { (error, _) in
+        let commentDict: [String : Any] = [
+            "content": content,
+            "username": user.username,
+            "date": dateFormatter.string(from: dateCreated),
+            ]
+        
+        
+        
+        let newComment = Comment(id: commentsRef.key, creator: user, dateCreated: dateCreated, content: content)
+        
+        commentsRef.setValue(commentDict) { (error, _) in
             guard (error == nil) else {
-                completionHandler(error)
+                completionHandler(error, nil)
                 return
             }
-            completionHandler(nil)
+            completionHandler(nil, newComment)
         }
     }
     
@@ -462,6 +484,42 @@ class DatabaseManager {
             }
             completionHandler(nil)
         }
+    }
+    
+    static func report(comment:Comment, onGame game:Game, blacklisted:Bool, completionHandler:@escaping(Error?)->Void) {
+        
+        let reportRef = ref.child("reportedComments").child(game.id).child(comment.id).child("usersWhoReported")
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        reportRef.childByAutoId().setValue((MainUser.shared?.username ?? "") as AnyObject) { (error, _) in
+            if error != nil {
+                completionHandler(error)
+            }
+            dispatchGroup.leave()
+        }
+        
+        if let mainUser = MainUser.shared {
+            if blacklisted {
+                let userRef = ref.child("users").child(mainUser.username)
+                dispatchGroup.enter()
+                userRef.child("blacklist").child(comment.creator.username).setValue("true", withCompletionBlock: { (error, _) in
+                    if error != nil {
+                        completionHandler(error)
+                    } else {
+                        mainUser.blacklistedUsers.append(comment.creator.username)
+                    }
+                    dispatchGroup.leave()
+                })
+            }
+        }
+        
+        dispatchGroup.notify(queue: DispatchQueue.main) {
+            completionHandler(nil)
+            return
+        }
+        
     }
     
 }

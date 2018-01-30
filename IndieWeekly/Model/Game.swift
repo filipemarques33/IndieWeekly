@@ -20,6 +20,7 @@ enum GameList:String {
 }
 
 struct Comment {
+    var id:String
     var creator:User
     var dateCreated:Date
     var content:String

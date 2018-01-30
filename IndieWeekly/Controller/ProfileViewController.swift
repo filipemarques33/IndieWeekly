@@ -148,15 +148,13 @@ class ProfileViewController: UIViewController {
     
     func presentImagePicker(){
         
-        
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        //picker.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
-        
-        self.present(picker, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .photoLibrary
+            self.present(picker, animated: true, completion: nil)
+        }
     }
 }
 

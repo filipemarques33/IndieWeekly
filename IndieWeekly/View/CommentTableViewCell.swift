@@ -8,12 +8,26 @@
 
 import UIKit
 
+protocol CommentCellDelegate:NSObjectProtocol {
+    func moreButtonPressed(onCell cell: CommentTableViewCell)
+}
+
 class CommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var creatorName: UILabel!
     @IBOutlet weak var dateCreated: UILabel!
     @IBOutlet weak var commentContent: UILabel!
+    
+    @IBAction func moreBtn(_ sender:UIButton) {
+        if let delegate = self.delegate {
+            delegate.moreButtonPressed(onCell: self)
+        }
+    }
+    
+    var comment:Comment!
+    
+    weak var delegate:CommentCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
