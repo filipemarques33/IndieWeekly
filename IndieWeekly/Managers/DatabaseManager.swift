@@ -406,7 +406,8 @@ class DatabaseManager {
                         var commentDate:Date
                         let date = commDict["date"] as! String
                         let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
+                        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
+                        
                         commentDate = dateFormatter.date(from: date)!
                         
                         let commentContent = commDict["content"] as! String
@@ -451,15 +452,15 @@ class DatabaseManager {
     static func addComment(fromUser user: User, content:String, toGame game:Game, completionHandler: @escaping(Error?, Comment?)->Void) {
         
         let dateCreated = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
+        
+        let dateString = String(describing:dateCreated)
         
         let commentsRef = ref.child("games").child(game.id).child("comments").childByAutoId()
         
         let commentDict: [String : Any] = [
             "content": content,
             "username": user.username,
-            "date": dateFormatter.string(from: dateCreated),
+            "date": dateString,
             ]
         
         

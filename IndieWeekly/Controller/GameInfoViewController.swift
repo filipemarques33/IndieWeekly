@@ -126,7 +126,7 @@ class GameInfoViewController: UIViewController {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
-        let text = NSLocalizedString("Hey there! I just read about \(selectedGame.name) and thought you might like it!\n\nAlso, check out IndieWeekly and get recommendations on the best indie games!\n\nDownload it on AppStore:", comment: "")
+        let text = NSLocalizedString("Hey there! I just read about \(selectedGame.name) and thought you might like it!\n\nAlso, check out IndieWeekly and get recommendations on the best indie games!\n\nDownload it on AppStore: https://itunes.apple.com/br/app/indieweekly/id1341177863", comment: "")
         let activityViewController = UIActivityViewController(activityItems: [text as NSString], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }

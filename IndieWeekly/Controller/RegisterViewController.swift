@@ -31,17 +31,21 @@ class RegisterViewController: UIViewController, SFSafariViewControllerDelegate {
         
         let webVC = WebViewController(url: ppURL!)
         webVC.delegate = self
-        webVC.dismissButtonStyle = .close
+        if #available(iOS 11.0, *) {
+            webVC.dismissButtonStyle = .close
+        }
         
         self.present(webVC, animated: true, completion: nil)
     }
     
     @IBAction func TermsAndConditionsTap(_ sender: UITapGestureRecognizer) {
-        let tcURL = URL(string: "https://drive.google.com/file/d/1tle0gb9R7JoX7I3odsakXjvGInnAoVZ3/view")
+        let tcURL = URL(string: "https://docs.google.com/document/d/17WVoQ3uVMVIJ4lHcu57XtujoRbDEKYWq8MDIP489gc8/view")
         
         let webVC = WebViewController(url: tcURL!)
         webVC.delegate = self
-        webVC.dismissButtonStyle = .close
+        if #available(iOS 11.0, *) {
+            webVC.dismissButtonStyle = .close
+        }
         
         self.present(webVC, animated: true, completion: nil)
     }

@@ -18,6 +18,16 @@ class LoginServices {
             return
         }
         
+        let invalidCharacters = [".", "$", "[", "]", "#", "/"]
+        
+        for char in invalidCharacters {
+            if username.contains(char){
+                let error:Error = LoginServicesError.invalidCharacter
+                completionHandler(error)
+                return
+            }
+        }
+        
         if password != passwordConfirmation {
             let error:Error = LoginServicesError.confirmationDifferent
             completionHandler(error)

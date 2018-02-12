@@ -29,7 +29,9 @@ extension GameInfoViewController:UITableViewDelegate {
             
             let webVC = WebViewController(url: cell.website)
             webVC.delegate = self
-            webVC.dismissButtonStyle = .close
+            if #available(iOS 11.0, *) {
+                webVC.dismissButtonStyle = .close
+            }
             
             self.present(webVC, animated: true, completion: nil)
         }

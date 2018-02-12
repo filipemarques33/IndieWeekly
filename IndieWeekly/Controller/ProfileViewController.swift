@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var gamesToShow: UISegmentedControl!
     
-    @IBAction func userOptionsBtnPressed(_ sender: UIButton) {
+    @IBAction func userOptionPressed(_ sender: UITapGestureRecognizer) {
         if MainUser.shared != nil {
             self.showUserOptionsSheet()
         } else {
@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         self.gamesCollectionView.delegate = self
         self.gamesCollectionView.reloadData()
         
-        self.userProfilePicture.layer.cornerRadius = self.userProfilePicture.frame.height/2
+        self.userProfilePicture.layer.cornerRadius = self.userProfilePicture.bounds.height/2
         self.userProfilePicture.layer.borderWidth = 3.0
         self.userProfilePicture.layer.borderColor = UIColor.white.cgColor
         

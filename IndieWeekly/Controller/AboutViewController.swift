@@ -16,17 +16,27 @@ class AboutViewController: UIViewController {
     
     @IBOutlet weak var devPicture: UIImageView!
     
+    @IBOutlet weak var devInfoTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        devPicture.layer.cornerRadius = devPicture.frame.height/2
+        
         devPicture.layer.borderWidth = 4
         devPicture.layer.borderColor = UIColor.white.cgColor
+
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        devPicture.layer.cornerRadius = devPicture.frame.height/2
+        devInfoTextView.setContentOffset(CGPoint.zero, animated: false)
+        
     }
     
 

@@ -12,6 +12,7 @@ public enum LoginServicesError: Error {
     case fieldFilling
     case usernameTaken
     case confirmationDifferent
+    case invalidCharacter
 }
 
 extension LoginServicesError: LocalizedError {
@@ -23,6 +24,8 @@ extension LoginServicesError: LocalizedError {
             return NSLocalizedString("Username already taken.", comment: "")
         case .confirmationDifferent:
             return NSLocalizedString("Password doesn't match confirmation.", comment: "")
+        case .invalidCharacter:
+            return NSLocalizedString("Username cannot contain the following characters: . $ [ ] # / ", comment: "")
         }
     }
 }
