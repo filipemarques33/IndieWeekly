@@ -48,11 +48,32 @@ class GameInfoViewController: UIViewController {
         self.gamePoster.layer.borderColor = UIColor.white.cgColor
         self.gamePoster.layer.borderWidth = 2.0
         self.gamePoster.clipsToBounds = true
-        Manager.shared.loadImage(with: selectedGame.posterURL!, into: self.gamePoster)
         self.backgroudImageView.dropShadow()
         
-        Manager.shared.loadImage(with: selectedGame.screenshotURL!, into: self.gameScreenshot)
-        self.gameScreenshot.applyGradient()
+        Manager.shared.loadImage(with: selectedGame.posterURL!, into: self.gamePoster) { (result, cache) in
+            if result.error == nil {
+                self.gamePoster.image = result.value
+                
+                self.gamePoster.alpha = 0
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.gamePoster.alpha = 1
+                })
+            }
+        }
+        
+        Manager.shared.loadImage(with: selectedGame.screenshotURL!, into: self.gameScreenshot) { (result, cache) in
+            if result.error == nil {
+                self.gameScreenshot.applyGradient()
+                self.gameScreenshot.image = result.value
+                
+                self.gameScreenshot.alpha = 0
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.gameScreenshot.alpha = 1
+                })
+            }
+        }
+
+        
         
         self.infoTableView.estimatedRowHeight = 44
         self.infoTableView.dataSource = self

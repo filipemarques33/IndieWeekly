@@ -410,23 +410,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_library" translatesAutoresizingMaskIntoConstraints="NO" id="or3-2c-0tl" userLabel="empty_image">
+                                <rect key="frame" x="0.0" y="213" width="375" height="405"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vNb-Qd-qF6" firstAttribute="trailing" secondItem="or3-2c-0tl" secondAttribute="trailing" id="3qK-uL-PMP"/>
+                            <constraint firstItem="or3-2c-0tl" firstAttribute="height" secondItem="4pL-2B-H52" secondAttribute="height" id="5r2-lx-7pq"/>
                             <constraint firstItem="vNb-Qd-qF6" firstAttribute="trailing" secondItem="vPF-i3-mjZ" secondAttribute="trailing" id="7gb-MC-V4t"/>
                             <constraint firstItem="vNb-Qd-qF6" firstAttribute="top" secondItem="qyV-f1-ha4" secondAttribute="top" constant="-9" id="7ku-xS-qd3"/>
+                            <constraint firstItem="or3-2c-0tl" firstAttribute="leading" secondItem="vNb-Qd-qF6" secondAttribute="leading" id="AN5-gC-M4t"/>
                             <constraint firstItem="vNb-Qd-qF6" firstAttribute="trailing" secondItem="4pL-2B-H52" secondAttribute="trailing" id="Amw-cv-rYj"/>
                             <constraint firstItem="vNb-Qd-qF6" firstAttribute="top" secondItem="gM5-Rb-Q8s" secondAttribute="top" constant="-9" id="GPS-VH-DDA"/>
+                            <constraint firstItem="or3-2c-0tl" firstAttribute="top" secondItem="vPF-i3-mjZ" secondAttribute="bottom" id="Tks-o6-wpA"/>
                             <constraint firstItem="vNb-Qd-qF6" firstAttribute="bottom" secondItem="4pL-2B-H52" secondAttribute="bottom" id="UmI-vl-RLs"/>
                             <constraint firstItem="vPF-i3-mjZ" firstAttribute="top" secondItem="EGA-lk-nmJ" secondAttribute="top" id="asy-Qy-oZY"/>
                             <constraint firstItem="4pL-2B-H52" firstAttribute="leading" secondItem="vNb-Qd-qF6" secondAttribute="leading" id="c6v-ZH-cEu"/>
+                            <constraint firstItem="or3-2c-0tl" firstAttribute="width" secondItem="4pL-2B-H52" secondAttribute="width" id="dVz-b1-veS"/>
                             <constraint firstItem="vPF-i3-mjZ" firstAttribute="leading" secondItem="vNb-Qd-qF6" secondAttribute="leading" id="fC7-cx-y82"/>
+                            <constraint firstItem="vNb-Qd-qF6" firstAttribute="bottom" secondItem="or3-2c-0tl" secondAttribute="bottom" id="vFp-bO-eqK"/>
                             <constraint firstItem="4pL-2B-H52" firstAttribute="top" secondItem="vPF-i3-mjZ" secondAttribute="bottom" id="zfr-zl-hsv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vNb-Qd-qF6"/>
                     </view>
                     <navigationItem key="navigationItem" id="tCi-Wb-L13"/>
                     <connections>
+                        <outlet property="emptyImage" destination="or3-2c-0tl" id="OlR-Mj-RmC"/>
                         <outlet property="gamesCollectionView" destination="4pL-2B-H52" id="xvg-i9-6cp"/>
                         <outlet property="gamesToShow" destination="5ic-47-kQz" id="5ce-x7-Cwv"/>
                         <outlet property="userEmail" destination="4X5-nZ-h0g" id="g1q-RO-dI2"/>
@@ -1578,6 +1589,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
         <image name="banner_placeholder" width="371" height="122"/>
         <image name="developer_picture" width="198" height="198"/>
         <image name="emailLogo" width="23" height="15"/>
+        <image name="empty_library" width="175" height="208"/>
         <image name="gameInfo_date" width="15" height="15"/>
         <image name="gameInfo_genre" width="15" height="15"/>
         <image name="gameInfo_platform" width="15" height="15"/>
@@ -1594,7 +1606,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1uN-u2-ycE"/>
-        <segue reference="3f7-oc-3nE"/>
+        <segue reference="4Ci-26-w4O"/>
         <segue reference="gbK-Ki-gko"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.64313725490196072" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>

@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var gamesToShow: UISegmentedControl!
     
+    @IBOutlet weak var emptyImage: UIImageView!
+    
     @IBAction func userOptionPressed(_ sender: UITapGestureRecognizer) {
         if MainUser.shared != nil {
             self.showUserOptionsSheet()
@@ -68,6 +70,16 @@ class ProfileViewController: UIViewController {
     func reloadData() {
         self.loadGames()
         self.gamesCollectionView?.reloadData()
+        
+        if gamesToShow.selectedSegmentIndex == 0, library.isEmpty {
+            self.emptyImage.isHidden = false
+            self.emptyImage.image = UIImage(named:"empty_library")
+        } else if gamesToShow.selectedSegmentIndex == 1, wishlist.isEmpty {
+            self.emptyImage.isHidden = false
+            self.emptyImage.image = UIImage(named:"empty_wishlist")
+        } else {
+            self.emptyImage.isHidden = true
+        }
     }
     
     func loadGames() {
@@ -135,8 +147,9 @@ class ProfileViewController: UIViewController {
             self.userEmail.text = "Please login to access your games"
             self.userProfilePicture.image = UIImage(named:"PlaceholderProfilePicture")
         }
-        self.loadGames()
-        self.gamesCollectionView.reloadData()
+        
+        self.reloadData()
+        
     }
     
     func updateProfilePictureView() {
