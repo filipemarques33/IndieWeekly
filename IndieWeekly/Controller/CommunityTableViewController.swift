@@ -61,7 +61,7 @@ class CommunityTableViewController: UITableViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         self.view.addGestureRecognizer(tap)
         
-        self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControl.Event.valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,7 +156,7 @@ class CommunityTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     @objc func hideKeyboard() {

@@ -7,7 +7,12 @@
 		<key>IndieWeekly.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>23</integer>
+		</dict>
+		<key>IndieWeekly.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>23</integer>
 		</dict>
 	</dict>
 </dict>

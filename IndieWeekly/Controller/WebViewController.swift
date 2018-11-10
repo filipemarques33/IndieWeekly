@@ -10,7 +10,11 @@ import UIKit
 import SafariServices
 
 class WebViewController: SFSafariViewController {
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,15 +26,15 @@ class WebViewController: SFSafariViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .default
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .lightContent
-        super.viewWillDisappear(animated)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        UIApplication.shared.statusBarStyle = .default
+//        super.viewWillAppear(animated)
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        super.viewWillDisappear(animated)
+//    }
     
 
     

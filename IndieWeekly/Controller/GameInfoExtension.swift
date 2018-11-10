@@ -15,7 +15,7 @@ extension GameInfoViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = indexPath.section
         if section == 0 || section == 1 {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         } else {
             return 44
         }
@@ -136,8 +136,8 @@ extension UILabel {
         paragraphStyle.alignment = self.textAlignment
         
         let attrString = NSMutableAttributedString(string: self.text!)
-        attrString.addAttribute(NSAttributedStringKey.font, value: self.font, range: NSMakeRange(0, attrString.length))
-        attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.font, value: self.font, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
         self.attributedText = attrString
     }
 }

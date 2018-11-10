@@ -55,12 +55,12 @@ class LoginViewController: UIViewController {
         self.errorLabel.text = ""
         
         // Editing email textfield
-        emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         emailField.delegate = self
         emailField.keyboardType = .emailAddress
         
         
-        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordField.delegate = self
         
         

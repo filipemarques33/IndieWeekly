@@ -465,7 +465,7 @@ class DatabaseManager {
         
         
         
-        let newComment = Comment(id: commentsRef.key, creator: user, dateCreated: dateCreated, content: content)
+        let newComment = Comment(id: commentsRef.key!, creator: user, dateCreated: dateCreated, content: content)
         
         commentsRef.setValue(commentDict) { (error, _) in
             guard (error == nil) else {

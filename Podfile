@@ -9,8 +9,8 @@ target 'IndieWeekly' do
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
-    pod 'Firebase/Messaging'
-    pod 'Firebase/Storage'
+   	pod 'Firebase/Messaging'
+  	pod 'Firebase/Storage'
 	pod 'FirebaseUI/Auth'
 	pod 'FirebaseUI/Facebook'
 
@@ -19,6 +19,6 @@ target 'IndieWeekly' do
 	pod 'FacebookShare'
 
 	pod 'Nuke', '~> 5.0'
-    pod 'IQKeyboardManagerSwift'
+    	pod 'IQKeyboardManagerSwift'
 
 end

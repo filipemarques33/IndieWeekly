@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d5W-tV-O2B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d5W-tV-O2B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-88-EXZ">
-                                <rect key="frame" x="110" y="224" width="155" height="178"/>
+                                <rect key="frame" x="110" y="224.5" width="155" height="178"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EyI-88-EXZ" secondAttribute="height" multiplier="155:178" id="MiV-mz-TlJ"/>
                                 </constraints>
@@ -64,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoAndTypo" translatesAutoresizingMaskIntoConstraints="NO" id="REB-DD-nmJ">
-                                <rect key="frame" x="81" y="60" width="212" height="75.5"/>
+                                <rect key="frame" x="81.5" y="60" width="212" height="75.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="REB-DD-nmJ" secondAttribute="height" multiplier="213:76" id="DPg-TR-mkj"/>
                                 </constraints>
@@ -99,7 +97,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-bB-dVh">
-                                        <rect key="frame" x="8" y="8" width="23" height="15"/>
+                                        <rect key="frame" x="8" y="8.5" width="23" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dyw-bB-dVh" secondAttribute="height" multiplier="23:15" id="8f8-4e-rVI"/>
                                         </constraints>
@@ -140,7 +138,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vIJ-i5-1De">
-                                        <rect key="frame" x="40" y="7" width="217" height="21"/>
+                                        <rect key="frame" x="40" y="8" width="217" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -159,7 +157,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1H-PK-uWh">
-                                <rect key="frame" x="128.5" y="581" width="119" height="33"/>
+                                <rect key="frame" x="128" y="581" width="119" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
@@ -322,23 +320,23 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32H-Kc-yQQ">
-                                        <rect key="frame" x="95" y="28" width="184" height="140"/>
+                                        <rect key="frame" x="95.5" y="28" width="184" height="140"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqN-ad-80F">
-                                                <rect key="frame" x="52" y="8" width="81" height="81.5"/>
+                                                <rect key="frame" x="51.5" y="8" width="81" height="81"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="81" id="Sli-hv-6za"/>
                                                     <constraint firstAttribute="width" secondItem="lqN-ad-80F" secondAttribute="height" multiplier="1:1" id="vSB-o7-P04"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here to Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-cr-9uu">
-                                                <rect key="frame" x="0.0" y="96.5" width="184" height="24"/>
+                                                <rect key="frame" x="0.0" y="96" width="184" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login to access your games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4X5-nZ-h0g">
-                                                <rect key="frame" x="0.0" y="124.5" width="184" height="12"/>
+                                                <rect key="frame" x="0.0" y="124" width="184" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -376,7 +374,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4pL-2B-H52">
-                                <rect key="frame" x="0.0" y="213" width="375" height="405"/>
+                                <rect key="frame" x="0.0" y="213" width="375" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="6yO-ZD-DwH">
                                     <size key="itemSize" width="105" height="150"/>
@@ -411,7 +409,7 @@
                                 </cells>
                             </collectionView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_library" translatesAutoresizingMaskIntoConstraints="NO" id="or3-2c-0tl" userLabel="empty_image">
-                                <rect key="frame" x="0.0" y="213" width="375" height="405"/>
+                                <rect key="frame" x="0.0" y="213" width="375" height="454"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
@@ -486,7 +484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" bounces="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUI-yu-QdU">
-                                <rect key="frame" x="20" y="216" width="335" height="270.5"/>
+                                <rect key="frame" x="20" y="216" width="335" height="319"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Video-games became part of my daily life when I was about 5 years old. I can’t even begin to say how much fun I’ve had with my Sega Mega Drive and all games I’ve played ever since. Nowadays, though I still enjoy playing AAAs, indie games are the ones that caught my heart with their beautiful art, moving stories and innovative mechanics.
@@ -502,13 +500,13 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" image="LogoAndTypo" translatesAutoresizingMaskIntoConstraints="NO" id="lo7-cr-y6Z">
-                                <rect key="frame" x="105.5" y="529.5" width="164" height="58.5"/>
+                                <rect key="frame" x="105" y="578" width="165" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lo7-cr-y6Z" secondAttribute="height" multiplier="171:61" id="huE-WN-Wm9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Filipe Marques" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ9-q2-uRm">
-                                <rect key="frame" x="137.5" y="486.5" width="100" height="18"/>
+                                <rect key="frame" x="137.5" y="535" width="100" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -596,23 +594,23 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srD-DA-2hU">
-                                <rect key="frame" x="55" y="195.5" width="265" height="33"/>
+                                <rect key="frame" x="55" y="195.5" width="265" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtk-6W-rSD">
-                                        <rect key="frame" x="0.0" y="32" width="265" height="1"/>
+                                        <rect key="frame" x="0.0" y="31" width="265" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Cdb-hK-E2D"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-ku-aNs">
-                                        <rect key="frame" x="8" y="9.5" width="23.5" height="15"/>
+                                        <rect key="frame" x="8" y="8.5" width="23" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NOA-ku-aNs" secondAttribute="height" multiplier="23:15" id="Hqd-AK-WHx"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oY0-Sm-FNF">
-                                        <rect key="frame" x="40.5" y="6" width="216.5" height="21"/>
+                                        <rect key="frame" x="40" y="5.5" width="217" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -631,27 +629,27 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iZ-bu-Nqv" userLabel="Spacing1">
-                                <rect key="frame" x="55" y="228.5" width="265" height="40.5"/>
+                                <rect key="frame" x="55" y="227.5" width="265" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-qV-b8R">
-                                <rect key="frame" x="55" y="269" width="265" height="33"/>
+                                <rect key="frame" x="55" y="267.5" width="265" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBc-sD-gdb">
-                                        <rect key="frame" x="0.5" y="32" width="265" height="1"/>
+                                        <rect key="frame" x="0.0" y="31" width="265" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="39b-Vq-idY"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailLogo" translatesAutoresizingMaskIntoConstraints="NO" id="G0C-Db-MsS">
-                                        <rect key="frame" x="8.5" y="9.5" width="23" height="15"/>
+                                        <rect key="frame" x="8" y="8.5" width="23" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="G0C-Db-MsS" secondAttribute="height" multiplier="23:15" id="gfS-y4-wbX"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MU-iU-S6p">
-                                        <rect key="frame" x="40.5" y="6" width="217" height="21"/>
+                                        <rect key="frame" x="40" y="5.5" width="217" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -671,27 +669,27 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <viewLayoutGuide key="safeArea" id="CZT-AV-kZc"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLU-JR-LAa" userLabel="Spacing 2">
-                                <rect key="frame" x="55" y="302" width="265" height="40.5"/>
+                                <rect key="frame" x="55" y="299.5" width="265" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-Fs-WAA">
-                                <rect key="frame" x="55" y="342.5" width="265" height="36"/>
+                                <rect key="frame" x="55" y="339.5" width="265" height="36.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwG-JY-aS7">
-                                        <rect key="frame" x="0.5" y="35" width="265" height="1"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="265" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="vR2-kI-1R3"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Nr8-Fd-7Xa">
-                                        <rect key="frame" x="8.5" y="10" width="24" height="17"/>
+                                        <rect key="frame" x="8" y="10" width="24" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nr8-Fd-7Xa" secondAttribute="height" multiplier="24:17" id="KTv-RW-6y4"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iLF-h5-E8Q">
-                                        <rect key="frame" x="40.5" y="8" width="217" height="21"/>
+                                        <rect key="frame" x="40" y="8" width="217" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
@@ -711,27 +709,27 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <viewLayoutGuide key="safeArea" id="neA-K9-fWb"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAm-Yx-Xcw" userLabel="Spacing 3">
-                                <rect key="frame" x="55" y="378.5" width="265" height="40.5"/>
+                                <rect key="frame" x="55" y="376" width="265" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28k-lA-Tuj">
-                                <rect key="frame" x="55" y="419" width="265" height="37.5"/>
+                                <rect key="frame" x="55" y="416" width="265" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qm-2i-rRr">
-                                        <rect key="frame" x="0.5" y="36.5" width="265" height="1"/>
+                                        <rect key="frame" x="0.0" y="35" width="265" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="bdH-Zn-QqP"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yHs-tH-8cL">
-                                        <rect key="frame" x="8.5" y="10" width="24" height="17"/>
+                                        <rect key="frame" x="8" y="9.5" width="24" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yHs-tH-8cL" secondAttribute="height" multiplier="24:17" id="trc-Jy-2X7"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TrG-zA-WNe">
-                                        <rect key="frame" x="40.5" y="8.5" width="217" height="21"/>
+                                        <rect key="frame" x="40" y="7.5" width="217" height="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
@@ -751,11 +749,11 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <viewLayoutGuide key="safeArea" id="1RH-LI-dDz"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-Df-ZwH" userLabel="Spacing 4">
-                                <rect key="frame" x="55" y="456.5" width="265" height="40.5"/>
+                                <rect key="frame" x="55" y="452" width="265" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPe-jM-N0O">
-                                <rect key="frame" x="68" y="497" width="239" height="40"/>
+                                <rect key="frame" x="68" y="492" width="239" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="R1H-Fp-OJy"/>
@@ -786,7 +784,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                 <rect key="frame" x="63.5" y="602" width="248" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By registering, you agree to our" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-zY-Wnx">
-                                        <rect key="frame" x="29" y="0.0" width="191" height="16"/>
+                                        <rect key="frame" x="28.5" y="0.0" width="191" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -992,7 +990,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="yiK-xG-E91">
-                                        <rect key="frame" x="118" y="100" width="241" height="14.5"/>
+                                        <rect key="frame" x="118" y="100.5" width="241" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1031,7 +1029,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platforms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV8-p8-TPA">
-                                        <rect key="frame" x="141" y="157.5" width="218" height="15"/>
+                                        <rect key="frame" x="141" y="158" width="218" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1103,13 +1101,13 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                                 <rect key="frame" x="125" y="0.0" width="125" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXX-2n-mOk">
-                                                        <rect key="frame" x="32" y="27" width="60" height="25"/>
+                                                        <rect key="frame" x="32.5" y="27" width="60" height="25"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                         <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameOptions_wishlist_neutral" translatesAutoresizingMaskIntoConstraints="NO" id="D45-Mq-MEA">
-                                                        <rect key="frame" x="53" y="10" width="18" height="17"/>
+                                                        <rect key="frame" x="53.5" y="10" width="18" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="1Pc-PY-eTf"/>
                                                             <constraint firstAttribute="height" constant="17" id="BwG-xs-GP6"/>
@@ -1146,7 +1144,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameOptions_share" translatesAutoresizingMaskIntoConstraints="NO" id="Ar3-gj-Uba">
-                                                        <rect key="frame" x="53" y="10" width="18" height="17"/>
+                                                        <rect key="frame" x="53.5" y="10" width="18" height="17"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="2LB-jJ-bcE"/>
                                                             <constraint firstAttribute="width" secondItem="Ar3-gj-Uba" secondAttribute="height" multiplier="18:17" id="7N1-Vk-lug"/>
@@ -1181,7 +1179,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LA-OZ-kf9">
-                                        <rect key="frame" x="8" y="267" width="359" height="0.5"/>
+                                        <rect key="frame" x="8" y="267.5" width="359" height="0.5"/>
                                         <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="AOH-k5-M3p"/>
@@ -1301,7 +1299,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt8-08-FdE">
-                                                    <rect key="frame" x="61.5" y="14" width="264.5" height="16.5"/>
+                                                    <rect key="frame" x="61.5" y="13.5" width="264.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1336,7 +1334,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFf-DE-H4a">
-                                                    <rect key="frame" x="61.5" y="14" width="264.5" height="16.5"/>
+                                                    <rect key="frame" x="61.5" y="13.5" width="264.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
                                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1420,7 +1418,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                                             </constraints>
                                         </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-AS-4YN">
-                                            <rect key="frame" x="71" y="0.0" width="289" height="56"/>
+                                            <rect key="frame" x="71" y="0.0" width="289" height="55.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Write something about this game">
@@ -1559,7 +1557,7 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="egy-bw-tdV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="tabBar_profile" id="Vfb-zx-pnX"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="b2Y-vm-hXp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="b2Y-vm-hXp">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0" green="0.64313725490196072" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1586,8 +1584,8 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
         <image name="LaunchLogo" width="155" height="178"/>
         <image name="LogoAndTypo" width="213" height="76"/>
         <image name="PlaceholderProfilePicture" width="82" height="82"/>
-        <image name="banner_placeholder" width="371" height="122"/>
-        <image name="developer_picture" width="198" height="198"/>
+        <image name="banner_placeholder" width="371.5" height="122"/>
+        <image name="developer_picture" width="396" height="396"/>
         <image name="emailLogo" width="23" height="15"/>
         <image name="empty_library" width="175" height="208"/>
         <image name="gameInfo_date" width="15" height="15"/>
@@ -1600,13 +1598,14 @@ IndieWeekly is a project made to thank all independent developers who dedicate t
         <image name="navigation_info" width="28" height="28"/>
         <image name="navigation_notification" width="28" height="28"/>
         <image name="personLogo" width="23" height="15"/>
-        <image name="posterPlaceholder" width="86" height="122"/>
+        <image name="posterPlaceholder" width="172" height="244"/>
         <image name="tabBar_profile" width="48" height="32"/>
         <image name="tabBar_thisWeek" width="48" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1uN-u2-ycE"/>
-        <segue reference="4Ci-26-w4O"/>
+        <segue reference="iU8-H3-4YR"/>
+        <segue reference="dE0-22-Qj3"/>
+        <segue reference="3f7-oc-3nE"/>
         <segue reference="gbK-Ki-gko"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.64313725490196072" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>

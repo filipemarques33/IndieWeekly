@@ -77,17 +77,17 @@ class RegisterViewController: UIViewController, SFSafariViewControllerDelegate {
 
         self.errorLabel.text = ""
         
-        nameField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Username", comment: "User's username"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        nameField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Username", comment: "User's username"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         nameField.delegate = self
         
-        emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        emailField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("E-mail", comment: "User's Email"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         emailField.keyboardType = .emailAddress
         emailField.delegate = self
         
-        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Password", comment: "User's Password"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordField.delegate = self
         
-        confirmPasswordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Confirm Password", comment: "Password Confirmation"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        confirmPasswordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Confirm Password", comment: "Password Confirmation"), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         confirmPasswordField.delegate = self
         
         // Tap gesture to hide keyboard

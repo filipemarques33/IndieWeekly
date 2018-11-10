@@ -19,27 +19,34 @@ class StorageManager {
         
         //TODO: Resize image to 300x300
         
-        if let uploadData = UIImagePNGRepresentation(image) {
+        if let uploadData = image.pngData() {
             let uploadMetadata = StorageMetadata()
             uploadMetadata.contentType = "image/png"
+            
             imageRef.putData(uploadData, metadata: uploadMetadata, completion: {
                 (metadata, error) in
                 if error != nil {
                     completionHandler(error)
                     return
                 } else {
-                    if let url = metadata?.downloadURL()?.absoluteString, let user = MainUser.shared {
-                        DatabaseManager.update(profilePictureURL: url, forUser: user, completionHandler: {
-                            (error) in
-                            if error != nil {
-                                completionHandler(error)
-                                return
-                            }
-                            MainUser.shared?.profilePictureURL = metadata?.downloadURL()
-                            completionHandler(nil)
-                        })
-
-                    }
+                    
+                    imageRef.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            completionHandler(error)
+                            return
+                        } else {
+                            let urlString = url?.absoluteString
+                            DatabaseManager.update(profilePictureURL: urlString!, forUser: user, completionHandler: {
+                                (error) in
+                                if error != nil {
+                                    completionHandler(error)
+                                    return
+                                }
+                                MainUser.shared?.profilePictureURL = url!
+                                completionHandler(nil)
+                            })
+                        }
+                    })
                 }
             })
         }

@@ -18,7 +18,7 @@ class ActivityView: UIView {
         self.backgroundColor = UIColor(red: 0/255, green: 164/255, blue: 241/255, alpha: 1)
         self.layer.cornerRadius = 8.0
         
-        self.activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        self.activityIndicator.style = .whiteLarge
         self.activityIndicator.hidesWhenStopped = true
     }
     
