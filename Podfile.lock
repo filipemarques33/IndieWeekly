@@ -116,6 +116,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - Nuke (5.2)
   - Protobuf (3.6.1)
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - FacebookCore
@@ -130,6 +131,7 @@ DEPENDENCIES:
   - FirebaseUI/Facebook
   - IQKeyboardManagerSwift
   - Nuke (~> 5.0)
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -159,6 +161,7 @@ SPEC REPOS:
     - nanopb
     - Nuke
     - Protobuf
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -187,7 +190,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 632f44ae5abfb0bfc03f1f108de4036da8321ef2
+PODFILE CHECKSUM: 6813e3e4f54ae2f951f7a3dfc8fb09817c15c8e8
 
 COCOAPODS: 1.5.3

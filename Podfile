@@ -21,4 +21,6 @@ target 'IndieWeekly' do
 	pod 'Nuke', '~> 5.0'
     	pod 'IQKeyboardManagerSwift'
 
+	pod 'SwiftLint'
+
 end

@@ -9,17 +9,13 @@
 import UIKit
 
 class User {
-    
-    //var id: String
-    var username:String
-    var email:String
-    var profilePictureURL:URL?
-    
-    init(username: String, email: String, profilePictureURL:URL? = nil){
-        //self.id = id
+    var username: String
+    var email: String
+    var profilePictureURL: URL?
+
+    init(username: String, email: String, profilePictureURL: URL? = nil) {
         self.username = username
         self.email = email
         self.profilePictureURL = profilePictureURL
     }
-    
 }

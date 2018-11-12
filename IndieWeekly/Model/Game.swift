@@ -9,39 +9,50 @@
 import UIKit
 
 struct Store {
-    var name:String
-    var website:URL?
-    var image:UIImage?
+    var name: String
+    var website: URL?
+    var image: UIImage?
 }
 
-enum GameList:String {
+enum GameList: String {
     case library = "library"
     case wishlist = "wishlist"
 }
 
 struct Comment {
-    var id:String
-    var creator:User
-    var dateCreated:Date
-    var content:String
+    var id: String
+    var creator: User
+    var dateCreated: Date
+    var content: String
 }
 
 class Game {
-    var id:String
-    var name:String
-    var developer:String
-    var devWebsite:URL
-    var screenshotURL:URL?
-    var posterURL:URL?
-    var genre:String
-    var platforms:String
-    var releaseDate:Date
-    var synopsis:String
-    var editorsCritic:String
-    var stores:[Store] = []
-    var comments:[Comment] = []
+    var id: String
+    var name: String
+    var developer: String
+    var devWebsite: URL
+    var screenshotURL: URL?
+    var posterURL: URL?
+    var genre: String
+    var platforms: String
+    var releaseDate: Date
+    var synopsis: String
+    var editorsCritic: String
+    var stores: [Store] = []
+    var comments: [Comment] = []
 
-    init(id: String, name:String, developer:String, devWebsite:URL, posterURL:URL?, screenshotURL:URL?, genre:String, platforms:String, releaseDate:Date, synopsis:String, editorsCritic:String, stores:[Store]) {
+    init(id: String,
+         name: String,
+         developer: String,
+         devWebsite: URL,
+         posterURL: URL?,
+         screenshotURL: URL?,
+         genre: String,
+         platforms: String,
+         releaseDate: Date,
+         synopsis: String,
+         editorsCritic: String,
+         stores: [Store]) {
         self.id = id
         self.name = name
         self.developer = developer

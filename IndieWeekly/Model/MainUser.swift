@@ -9,19 +9,18 @@
 import UIKit
 
 class MainUser: User {
-    
-    static var shared:MainUser? = nil
-    
+    static var shared: MainUser? = nil
+
     // TODO: Add gameID type to String
     var blacklistedUsers = [String]()
     var library = [Game]()
     var wishlist = [Game]()
     var gamesLiked = [String]()
     var gamesDisliked = [String]()
-    
-    func add(game: Game, toList list: GameList, completion: @escaping ()->()) {
+
+    func add(game: Game, toList list: GameList, completion: @escaping() -> Void) {
         DatabaseManager.add(gameID: game.id, toList: list.rawValue) { (error) in
-            if error != nil  {
+            if error != nil {
                 print (error!.localizedDescription)
                 return
             } else {
@@ -42,10 +41,10 @@ class MainUser: User {
             }
         }
     }
-    
-    func remove(game: Game, fromList list:GameList, completion: @escaping()->Void) {
+
+    func remove(game: Game, fromList list: GameList, completion: @escaping() -> Void) {
         DatabaseManager.remove(gameID: game.id, toList: list.rawValue) { (error) in
-            if error != nil  {
+            if error != nil {
                 print (error!.localizedDescription)
                 return
             } else {
